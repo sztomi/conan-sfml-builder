@@ -8,7 +8,7 @@ import os
 class SfmlBuilderConan(ConanFile):
     name = "sfml-builder"
     version = "1.0.0"
-    url = "https://github.com/bincrafters/conan-sfml-meta"
+    url = "https://github.com/bincrafters/conan-sfml-builder"
     description = "Builder package for SFML."
     license = "https://github.com/SFML/SFML/blob/master/license.md"
     exports_sources = ["LICENSE", "sfml_builder.py"]

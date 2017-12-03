@@ -5,10 +5,9 @@ from conans import tools, CMake
 import os
 
 
-def source(conanfile, target_dir="sources"):
+def source(conanfile, extracted_dir, target_dir="sources"):
     source_url = "https://github.com/SFML/SFML"
     tools.get("{0}/archive/{1}.tar.gz".format(source_url, conanfile.version))
-    extracted_dir = conanfile.name + "-" + conanfile.version
     os.rename(extracted_dir, target_dir)
 
 
