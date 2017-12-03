@@ -16,7 +16,7 @@ def build_module(conanfile, module_name, source_dir="sources"):
     """ Builds a SFML module """
     cmake = CMake(conanfile)
     cmake.configure(source_dir=source_dir)
-    cmake.build(target=module_name)
+    cmake.build(target="sfml-" + module_name)
 
 
 def package_module(conanfile, module_name, source_dir="sources"):
