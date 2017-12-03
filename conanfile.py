@@ -12,9 +12,6 @@ class SfmlBuilderConan(ConanFile):
     description = "Builder package for SFML."
     license = "https://github.com/SFML/SFML/blob/master/license.md"
     exports_sources = ["LICENSE", "sfml_builder.py"]
-    settings = "os", "arch", "compiler", "build_type"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
 
     def build(self):
         pass
