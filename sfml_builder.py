@@ -19,12 +19,22 @@ def build_module(conanfile, module_name, source_dir="sources"):
 
 
 def package_module(conanfile, module_name, source_dir="sources"):
+    include_dir = "include/SFML/{}".format(module_name.title())
+    conanfile.copy(
+        pattern="*",
+        dst=include_dir,
+        src=os.path.join(source_dir, include_dir))
+    conanfile.copy(
+        pattern="{}.hpp".format(module_name.title()),
+        dst="include/SFML",
+        src=os.path.join(source_dir, "include/SFML"),
+        keep_path=False)
+    conanfile.copy(
+        pattern="Config.hpp",
+        dst="include/SFML",
+        src=os.path.join(source_dir, "include/SFML"),
+        keep_path=False)
     with tools.chdir(source_dir):
-        conanfile.copy(pattern="LICENSE")
-        conanfile.copy(
-            pattern="*",
-            dst="include/" + module_name,
-            src="sources/include/" + module_name)
         conanfile.copy(pattern="*.dll", dst="bin", src="bin", keep_path=False)
         conanfile.copy(pattern="*.lib", dst="lib", src="lib", keep_path=False)
         conanfile.copy(pattern="*.a", dst="lib", src="lib", keep_path=False)
