@@ -10,8 +10,8 @@ class SfmlBuilderConan(ConanFile):
     version = "1.0.0"
     url = "https://github.com/bincrafters/conan-sfml-builder"
     description = "Builder package for SFML."
-    license = "https://github.com/SFML/SFML/blob/master/license.md"
-    exports_sources = ["LICENSE", "sfml_builder.py"]
+    license = "MIT"
+    exports_sources = ["sfml_builder.py"]
 
     def build(self):
         pass
